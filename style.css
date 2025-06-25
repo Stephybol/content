@@ -30,32 +30,5 @@ body {
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
-  padding: 0 20px; /* spazio ai lati per evitare tagli */
-  min-width: 250px; /* spazio minimo per le parole più lunghe */
-  text-align: center;
-}
-
-.side-nav {
-  position: fixed;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.side-nav a {
-  text-decoration: none;
-  font-size: 24px;
-  color: #333;
-  background: #f0f0f0;
-  padding: 10px;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.side-nav a:hover {
-  background: #007bff;
-  color: white;
-}
+  padding: 0 20px;
+  min-widt
