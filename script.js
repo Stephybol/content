@@ -1,5 +1,5 @@
-const baseText = "I'm a Grance";
-const extraWords = ["Manager", "PM", "BI"];
+const baseText = "I am....";
+const extraWords = ["Service Manager", "Project Manager", "Business Intelligence"];
 let index = 0;
 let fullText = baseText;
 const typingElement = document.querySelector('.typing');
