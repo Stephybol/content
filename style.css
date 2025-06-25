@@ -35,12 +35,15 @@ body {
   padding: 0 20px;
   min-width: 250px;
   text-align: center;
+  letter-spacing: 1px;
+  font-weight: bold;
 }
 
 /* Cursore lampeggiante */
 .typing::after {
   content: "|";
   font-weight: bold;
+  color: white;
   animation: blink 1s infinite;
 }
 
@@ -70,4 +73,11 @@ body {
   background: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 50%;
-  transition:
+  transition: background 0.3s, transform 0.3s;
+}
+
+.side-nav a:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  transform: scale(1.1);
+}
