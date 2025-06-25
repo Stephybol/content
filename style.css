@@ -1,9 +1,11 @@
+/* Reset di base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
+/* Struttura sezioni */
 .section {
   height: 100vh;
   padding: 50px;
@@ -12,7 +14,7 @@ body {
   justify-content: center;
 }
 
-/* Sezione principale con sfondo */
+/* Sezione home con sfondo e testo centrato */
 .home {
   background: url('background.jpg') no-repeat center center/cover;
   color: white;
@@ -24,7 +26,7 @@ body {
   text-align: center;
 }
 
-/* Testo digitato dinamico */
+/* Testo animato dinamico */
 .typing {
   font-size: 2rem;
   white-space: nowrap;
@@ -47,7 +49,7 @@ body {
   50% { opacity: 0; }
 }
 
-/* Sidebar sinistra con icone verticali */
+/* Sidebar sinistra */
 .side-nav {
   position: fixed;
   top: 50%;
@@ -57,9 +59,15 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  z-index: 1000;
+  z-index: 9999;
 }
 
+/* Pulsanti della sidebar */
 .side-nav a {
   text-decoration: none;
-  font-s
+  font-size: 26px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 50%;
+  transition:
