@@ -12,7 +12,7 @@ body {
   justify-content: center;
 }
 
-/* MODIFICATA: centratura e layout della home */
+/* Sezione principale con sfondo */
 .home {
   background: url('background.jpg') no-repeat center center/cover;
   color: white;
@@ -20,15 +20,46 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* centra orizzontalmente */
-  text-align: center;  /* centra il testo */
+  align-items: center;
+  text-align: center;
 }
 
-/* AGGIUNTA: stile per il testo animato dinamico */
+/* Testo digitato dinamico */
 .typing {
   font-size: 2rem;
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
   padding: 0 20px;
-  min-widt
+  min-width: 250px;
+  text-align: center;
+}
+
+/* Cursore lampeggiante */
+.typing::after {
+  content: "|";
+  font-weight: bold;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Sidebar sinistra con icone verticali */
+.side-nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.side-nav a {
+  text-decoration: none;
+  font-s
