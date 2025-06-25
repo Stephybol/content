@@ -12,21 +12,27 @@ body {
   justify-content: center;
 }
 
+/* MODIFICATA: centratura e layout della home */
 .home {
   background: url('background.jpg') no-repeat center center/cover;
   color: white;
   text-shadow: 1px 1px 2px black;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;   /* Centra orizzontalmente */
-  text-align: center;    /* Centra il testo */
+  align-items: center; /* centra orizzontalmente */
+  text-align: center;  /* centra il testo */
 }
 
+/* AGGIUNTA: stile per il testo animato dinamico */
 .typing {
   font-size: 2rem;
-  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0 20px; /* spazio ai lati per evitare tagli */
+  min-width: 250px; /* spazio minimo per le parole più lunghe */
+  text-align: center;
 }
 
 .side-nav {
@@ -40,20 +46,6 @@ body {
 }
 
 .side-nav a {
-  text-decoration: none;
-  font-size: 24px;
-  color: #333;
-  background: #f0f0f0;
-  padding: 10px;
-  border-radius: 50%;
-  transition: background 0.3s;
-}
-
-.side-nav a:hover {
-  background: #007bff;
-  color: white;
-}
-
   text-decoration: none;
   font-size: 24px;
   color: #333;
