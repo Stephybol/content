@@ -1,11 +1,9 @@
-/* Reset di base */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
 }
 
-/* Struttura sezioni */
 .section {
   height: 100vh;
   padding: 50px;
@@ -14,7 +12,6 @@ body {
   justify-content: center;
 }
 
-/* Sezione home con sfondo e testo centrato */
 .home {
   background: url('background.jpg') no-repeat center center/cover;
   color: white;
@@ -26,7 +23,6 @@ body {
   text-align: center;
 }
 
-/* Testo animato dinamico */
 .typing {
   font-size: 2rem;
   white-space: nowrap;
@@ -39,7 +35,6 @@ body {
   font-weight: bold;
 }
 
-/* Cursore lampeggiante */
 .typing::after {
   content: "|";
   font-weight: bold;
@@ -52,7 +47,6 @@ body {
   50% { opacity: 0; }
 }
 
-/* Sidebar sinistra */
 .side-nav {
   position: fixed;
   top: 50%;
@@ -65,7 +59,6 @@ body {
   z-index: 9999;
 }
 
-/* Pulsanti della sidebar */
 .side-nav a {
   text-decoration: none;
   font-size: 26px;
