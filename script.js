@@ -1,38 +1,30 @@
-const text = ["PM", "BI", "Manager"];
+const words = ["PM", "BI", "Manager"];
 let index = 0;
-let charIndex = 0;
-let currentText = '';
-let isDeleting = false;
+let fullSentence = "";
+let typingElement;
 
-function type() {
-  const typingElement = document.querySelector('.typing');
+document.addEventListener("DOMContentLoaded", () => {
+  typingElement = document.querySelector('.typing');
+  typeNext();
+});
 
-  if (index >= text.length) index = 0;
-  currentText = text[index];
+function typeNext() {
+  if (index >= words.length) return;
 
-  if (isDeleting) {
-    typingElement.textContent = currentText.substring(0, charIndex--);
-  } else {
-    typingElement.textContent = currentText.substring(0, charIndex++);
-  }
+  const nextWord = (index > 0 ? ", " : "") + words[index];
+  let charIndex = 0;
 
-  // Velocità di scrittura/cancellazione
-  let typingSpeed = isDeleting ? 120 : 200;
+  const typeChar = () => {
+    if (charIndex < nextWord.length) {
+      fullSentence += nextWord[charIndex];
+      typingElement.textContent = fullSentence;
+      charIndex++;
+      setTimeout(typeChar, 100);
+    } else {
+      index++;
+      setTimeout(typeNext, 800);
+    }
+  };
 
-  // Pausa dopo che ha finito di scrivere una parola
-  if (!isDeleting && charIndex === currentText.length) {
-    isDeleting = true;
-    setTimeout(type, 1500); // pausa dopo la parola completa
-    return;
-  }
-
-  // Passa alla parola successiva
-  if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    index++;
-  }
-
-  setTimeout(type, typingSpeed);
+  typeChar();
 }
-
-document.addEventListener("DOMContentLoaded", type);
