@@ -1,40 +1,33 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Benvenuto nel mio sito</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f3f3f3;
-      text-align: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    p {
-      color: #555;
-      font-size: 18px;
-    }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      text-decoration: none;
-      background-color: #007acc;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-    a:hover {
-      background-color: #005fa3;
-    }
-  </style>
+  <title>Stefania Bologna</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Ciao! 👋</h1>
-  <p>Benvenuto nella mia prima pagina web su GitHub Pages.</p>
-  <a href="https://github.com/">Visita GitHub</a>
+  <nav class="side-nav">
+    <a href="#home">🏠</a>
+    <a href="#about">👩</a>
+    <a href="#projects">📄</a>
+  </nav>
+
+  <section id="home" class="section home">
+    <h1>Stefania Bologna</h1>
+    <p>I'm a <span class="typing"></span></p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Qui puoi scrivere una breve presentazione.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <p>Inserisci qui i tuoi progetti o link GitHub.</p>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
