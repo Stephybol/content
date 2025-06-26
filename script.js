@@ -10,23 +10,19 @@ function typeEffect() {
   const displayed = currentWord.substring(0, charIndex);
   typingElement.textContent = displayed;
 
-  if (isDeleting) {
-    charIndex--;
-    if (charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-    }
-  } else {
-    charIndex++;
-    if (charIndex === currentWord.length) {
-      isDeleting = true;
-      setTimeout(typeEffect, 1500); // pausa a fine parola
-      return;
-    }
+  let delay = isDeleting ? 50 : 100;
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    isDeleting = true;
+    delay = 1500;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    delay = 500;
   }
 
-  const delay = isDeleting ? 50 : 100;
+  charIndex += isDeleting ? -1 : 1;
   setTimeout(typeEffect, delay);
 }
 
-document.addEventListener("DOMContentLoaded", typeEffect);
+document.addEventListener("DOMContentLo
