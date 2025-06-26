@@ -11,11 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function typeNext() {
   if (index >= extraWords.length) {
-    // Reset dopo l'ultimo
-    index = 0;
-    fullText = baseText;
-    typingElement.textContent = fullText;
-    setTimeout(typeNext, 1000);
+    // Reset dopo tutte le parole
+    setTimeout(() => {
+      index = 0;
+      fullText = baseText;
+      typingElement.textContent = fullText;
+      setTimeout(typeNext, 1000);
+    }, 2000);
     return;
   }
 
