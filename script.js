@@ -1,4 +1,4 @@
-const baseText = "I am";
+const baseText = "I am:";
 const extraWords = ["Service Manager", "Project Manager", "Business Intelligence"];
 let index = 0;
 let fullText = baseText;
@@ -21,7 +21,9 @@ function typeNext() {
     return;
   }
 
-  const nextWord = " | " + extraWords[index];
+  // Usa ":" solo per la prima parola, "|" per le altre
+  const prefix = index === 0 ? "" : " | ";
+  const nextWord = prefix + extraWords[index];
   let charIndex = 0;
 
   function typeChar() {
