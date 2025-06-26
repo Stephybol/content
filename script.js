@@ -1,36 +1,32 @@
-const words = ["Service Manager", "Project Manager", "Business Intelligence"];
-const typingElement = document.querySelector('.typing');
+const words = ["Developer", "Project Manager", "BI Analyst", "UX Designer"];
+const typingElement = document.querySelector(".typing-text");
 
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
-function type() {
+function typeEffect() {
   const currentWord = words[wordIndex];
-  const visibleText = currentWord.substring(0, charIndex);
+  const displayed = currentWord.substring(0, charIndex);
+  typingElement.textContent = displayed;
 
-  typingElement.textContent = `I am: ${visibleText}`;
-
-  if (!isDeleting) {
-    if (charIndex < currentWord.length) {
-      charIndex++;
-      setTimeout(type, 100);
-    } else {
-      // Pausa prima di cancellare
-      isDeleting = true;
-      setTimeout(type, 1500);
-    }
-  } else {
-    if (charIndex > 0) {
-      charIndex--;
-      setTimeout(type, 50);
-    } else {
-      // Passa alla parola successiva
+  if (isDeleting) {
+    charIndex--;
+    if (charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
-      setTimeout(type, 500);
+    }
+  } else {
+    charIndex++;
+    if (charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1500); // pausa a fine parola
+      return;
     }
   }
+
+  const delay = isDeleting ? 50 : 100;
+  setTimeout(typeEffect, delay);
 }
 
-document.addEventListener("DOMContentLoaded", type);
+document.addEventListener("DOMContentLoaded", typeEffect);
