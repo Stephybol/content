@@ -1,40 +1,36 @@
-const baseText = "I am: ";
-const extraWords = ["Service Manager", "Project Manager", "Business Intelligence"];
+const words = ["Service Manager", "Project Manager", "Business Intelligence"];
 const typingElement = document.querySelector('.typing');
 
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let currentWord = "";
 
-function typeEffect() {
-  currentWord = extraWords[wordIndex];
+function type() {
+  const currentWord = words[wordIndex];
+  const visibleText = currentWord.substring(0, charIndex);
 
-  if (isDeleting) {
-    charIndex--;
+  typingElement.textContent = `I am: ${visibleText}`;
+
+  if (!isDeleting) {
+    if (charIndex < currentWord.length) {
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      // Pausa prima di cancellare
+      isDeleting = true;
+      setTimeout(type, 1500);
+    }
   } else {
-    charIndex++;
+    if (charIndex > 0) {
+      charIndex--;
+      setTimeout(type, 50);
+    } else {
+      // Passa alla parola successiva
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 500);
+    }
   }
-
-  const displayedText = baseText + currentWord.substring(0, charIndex);
-  typingElement.textContent = displayedText;
-
-  let typingSpeed = isDeleting ? 50 : 100;
-
-  if (!isDeleting && charIndex === currentWord.length) {
-    // Pausa alla fine della parola prima di cancellare
-    isDeleting = true;
-    typingSpeed = 1500;
-  } else if (isDeleting && charIndex === 0) {
-    // Passa alla parola successiva
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % extraWords.length;
-    typingSpeed = 500;
-  }
-
-  setTimeout(typeEffect, typingSpeed);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  typeEffect();
-});
+document.addEventListener("DOMContentLoaded", type);
