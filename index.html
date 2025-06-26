@@ -17,6 +17,7 @@
       color: #333;
     }
 
+    /* Sidebar */
     .side-nav {
       position: fixed;
       top: 50%;
@@ -46,7 +47,19 @@
       background-color: #ddd;
     }
 
-    .section {
+    /* Sezione Home - schermo intero */
+    .home {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    /* Sezioni About e Projects */
+    .section:not(.home) {
       padding: 80px 20px;
       max-width: 900px;
       margin: 0 auto;
