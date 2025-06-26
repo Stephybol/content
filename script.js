@@ -1,42 +1,40 @@
-const baseText = "I am:";
+const baseText = "I am: ";
 const extraWords = ["Service Manager", "Project Manager", "Business Intelligence"];
-let index = 0;
-let fullText = baseText;
 const typingElement = document.querySelector('.typing');
 
-document.addEventListener("DOMContentLoaded", () => {
-  typingElement.textContent = fullText;
-  setTimeout(typeNext, 1000);
-});
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let currentWord = "";
 
-function typeNext() {
-  if (index >= extraWords.length) {
-    // Reset dopo tutte le parole
-    setTimeout(() => {
-      index = 0;
-      fullText = baseText;
-      typingElement.textContent = fullText;
-      setTimeout(typeNext, 1000);
-    }, 2000);
-    return;
+function typeEffect() {
+  currentWord = extraWords[wordIndex];
+
+  if (isDeleting) {
+    charIndex--;
+  } else {
+    charIndex++;
   }
 
-  // Usa ":" solo per la prima parola, "|" per le altre
-  const prefix = index === 0 ? "" : " | ";
-  const nextWord = prefix + extraWords[index];
-  let charIndex = 0;
+  const displayedText = baseText + currentWord.substring(0, charIndex);
+  typingElement.textContent = displayedText;
 
-  function typeChar() {
-    if (charIndex < nextWord.length) {
-      fullText += nextWord[charIndex];
-      typingElement.textContent = fullText;
-      charIndex++;
-      setTimeout(typeChar, 100);
-    } else {
-      index++;
-      setTimeout(typeNext, 800);
-    }
+  let typingSpeed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && charIndex === currentWord.length) {
+    // Pausa alla fine della parola prima di cancellare
+    isDeleting = true;
+    typingSpeed = 1500;
+  } else if (isDeleting && charIndex === 0) {
+    // Passa alla parola successiva
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % extraWords.length;
+    typingSpeed = 500;
   }
 
-  typeChar();
+  setTimeout(typeEffect, typingSpeed);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  typeEffect();
+});
