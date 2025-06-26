@@ -1,4 +1,4 @@
-ody {
+body {
   margin: 0;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
@@ -23,9 +23,8 @@ ody {
   text-align: center;
 }
 
-/* Nuovo stile per ingrandire il nome */
 #home h1 {
-  font-size: 4rem; /* Puoi aumentare o diminuire a piacere */
+  font-size: 4rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -40,18 +39,14 @@ ody {
   text-align: center;
   letter-spacing: 1px;
   font-weight: bold;
+  border-right: 2px solid white;
+  animation: blink-caret 0.7s step-end infinite;
 }
 
-.typing::after {
-  content: "|";
-  font-weight: bold;
-  color: white;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .side-nav {
