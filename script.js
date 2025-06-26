@@ -1,4 +1,10 @@
-const words = ["Developer", "Project Manager", "BI Analyst", "UX Designer"];
+const words = [
+  "Service Manager",
+  "Project Manager",
+  "BI Analyst",
+  "UX Designer"
+];
+
 const typingElement = document.querySelector(".typing-text");
 
 let wordIndex = 0;
@@ -10,11 +16,11 @@ function typeEffect() {
   const displayed = currentWord.substring(0, charIndex);
   typingElement.textContent = displayed;
 
-  let delay = isDeleting ? 50 : 100;
+  let delay = isDeleting ? 80 : 140;
 
   if (!isDeleting && charIndex === currentWord.length) {
     isDeleting = true;
-    delay = 1500;
+    delay = 1000; // pausa dopo parola intera
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     wordIndex = (wordIndex + 1) % words.length;
