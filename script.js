@@ -25,4 +25,4 @@ function typeEffect() {
   setTimeout(typeEffect, delay);
 }
 
-document.addEventListener("DOMContentLo
+document.addEventListener("DOMContentLoaded", typeEffect);
