@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function typeNext() {
   if (index >= extraWords.length) return;
 
-  const nextWord = ", " + extraWords[index];
+  const nextWord = "| " + extraWords[index];
   let charIndex = 0;
 
   function typeChar() {
