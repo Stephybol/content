@@ -1,4 +1,4 @@
-body {
+ody {
   margin: 0;
   font-family: Arial, sans-serif;
   scroll-behavior: smooth;
@@ -21,6 +21,13 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+/* Nuovo stile per ingrandire il nome */
+#home h1 {
+  font-size: 4rem; /* Puoi aumentare o diminuire a piacere */
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .typing {
