@@ -1,5 +1,5 @@
-const baseText = "I am....";
-const extraWords = ["Service Manager" | "Project Manager"! "Business Intelligence"];
+const baseText = "I am";
+const extraWords = ["Service Manager", "Project Manager", "Business Intelligence"];
 let index = 0;
 let fullText = baseText;
 const typingElement = document.querySelector('.typing');
@@ -10,9 +10,16 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function typeNext() {
-  if (index >= extraWords.length) return;
+  if (index >= extraWords.length) {
+    // Reset dopo l'ultimo
+    index = 0;
+    fullText = baseText;
+    typingElement.textContent = fullText;
+    setTimeout(typeNext, 1000);
+    return;
+  }
 
-  const nextWord = ", " + extraWords[index];
+  const nextWord = " | " + extraWords[index];
   let charIndex = 0;
 
   function typeChar() {
