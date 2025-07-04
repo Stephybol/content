@@ -1,8 +1,7 @@
 const words = [
   "Service Manager",
-  "Project Manager",
+  "Team Leader",
   "BI Analyst",
-  "UX Designer"
 ];
 
 const typingElement = document.querySelector(".typing-text");
@@ -24,7 +23,7 @@ function typeEffect() {
   } else if (isDeleting && charIndex === 0) {
     isDeleting = false;
     wordIndex = (wordIndex + 1) % words.length;
-    delay = 500;
+    delay = 1000;
   }
 
   charIndex += isDeleting ? -1 : 1;
