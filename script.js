@@ -1,6 +1,6 @@
 const words = [
-  "Service Manager",
   "Team Leader",
+  "Power BI expert",
   "BI Analyst",
 ];
 
