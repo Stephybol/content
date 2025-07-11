@@ -5,7 +5,7 @@ body {
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
   padding: 50px;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,8 @@ body {
 }
 
 .home {
-  background: url('background.jpg') no-repeat center center/cover;
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
   color: white;
   text-shadow: 1px 1px 2px black;
   display: flex;
@@ -29,7 +30,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* ANIMAZIONE "I am: ..." */
+/* ANIMAZIONE */
 .typing-container {
   font-size: 2.4rem;
   font-weight: bold;
@@ -81,8 +82,8 @@ body {
   transform: scale(1.1);
 }
 
+/* ---- MOBILE TUTTI I CASI ---- */
 @media (max-width: 768px) {
-  /* Sidebar in basso su mobile */
   .side-nav {
     position: fixed;
     top: auto;
@@ -94,14 +95,18 @@ body {
     justify-content: space-around;
     background: rgba(0, 0, 0, 0.8);
     padding: 10px 0;
+    gap: 0;
   }
 
   .side-nav a {
     font-size: 22px;
-    padding: 12px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Testi più piccoli */
   #home h1 {
     font-size: 2.5rem;
   }
@@ -113,45 +118,10 @@ body {
   .section {
     padding: 30px;
   }
-}
-
-@media (max-width: 768px) and (orientation: portrait) {
-  /* Sidebar in basso in portrait */
-  .side-nav {
-    position: fixed;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: none;
-    flex-direction: row;
-    justify-content: space-around;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px 0;
-  }
-
-  .side-nav a {
-    font-size: 22px;
-    padding: 12px;
-  }
-
-  #home h1 {
-    font-size: 2.2rem;
-  }
-
-  .typing-container, .typing-text {
-    font-size: 1.4rem;
-  }
-
-  .section {
-    height: auto;         /* risolve problemi di taglio */
-    min-height: 100vh;    /* mantiene l’altezza minima */
-    padding: 30px;
-  }
 
   .home {
-    height: auto;         /* correzione per la home */
     min-height: 100vh;
-    padding: 30px;
+    height: auto;
+    padding: 50px 20px 80px; /* spazio sotto per la nav */
   }
 }
