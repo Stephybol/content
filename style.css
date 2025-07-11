@@ -80,6 +80,7 @@ body {
   color: black;
   transform: scale(1.1);
 }
+
 @media (max-width: 768px) {
   /* Sidebar in basso su mobile */
   .side-nav {
@@ -145,6 +146,12 @@ body {
   .section {
     height: auto;         /* risolve problemi di taglio */
     min-height: 100vh;    /* mantiene l’altezza minima */
+    padding: 30px;
+  }
+
+  .home {
+    height: auto;         /* correzione per la home */
+    min-height: 100vh;
     padding: 30px;
   }
 }
