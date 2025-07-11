@@ -1,3 +1,119 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+
+.section {
+  height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home {
+  background: url('background.jpg') no-repeat center center/cover;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ANIMAZIONE "I am: ..." */
+.typing-container {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.typing-text {
+  color: #1e90ff;
+  font-size: 2.4rem;
+  border-right: 2px solid white;
+  padding-right: 6px;
+  white-space: nowrap;
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.side-nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+}
+
+.side-nav a {
+  text-decoration: none;
+  font-size: 26px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.side-nav a:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  /* Sidebar in basso su mobile */
+  .side-nav {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+  }
+
+  .side-nav a {
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  /* Testi più piccoli */
+  #home h1 {
+    font-size: 2.5rem;
+  }
+
+  .typing-container, .typing-text {
+    font-size: 1.6rem;
+  }
+
+  .section {
+    padding: 30px;
+  }
+}
+
 @media (max-width: 768px) and (orientation: portrait) {
   /* Sidebar in basso in portrait */
   .side-nav {
