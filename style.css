@@ -1,153 +1,133 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stefania Bologna</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+}
 
-    .section {
-      min-height: 100vh;
-      padding: 50px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
+.section {
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-    .home {
-      background: url('background.jpg') no-repeat center center;
-      background-size: cover;
-      color: white;
-      text-shadow: 1px 1px 2px black;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+.home {
+  background: url('background.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-    #home h1 {
-      font-size: 4rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
+/* Forza il bianco su tutto l'h1 dentro #home */
+#home h1, 
+#home h1 * {
+  color: white !important;
+}
 
-    /* Forzare il bianco su <strong> e <b> */
-    .home h1 strong,
-    .home h1 b {
-      color: white !important;
-    }
+#home h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
-    /* ANIMAZIONE */
-    .typing-container {
-      font-size: 2.4rem;
-      font-weight: bold;
-      color: white;
-      text-shadow: 1px 1px 2px black;
-    }
+/* ANIMAZIONE */
+.typing-container {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
 
-    .typing-text {
-      color: #1e90ff;
-      font-size: 2.4rem;
-      border-right: 2px solid white;
-      padding-right: 6px;
-      white-space: nowrap;
-      display: inline-block;
-      animation: blink-caret 0.75s step-end infinite;
-    }
+.typing-text {
+  color: #1e90ff;
+  font-size: 2.4rem;
+  border-right: 2px solid white;
+  padding-right: 6px;
+  white-space: nowrap;
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
+}
 
-    @keyframes blink-caret {
-      50% {
-        border-color: transparent;
-      }
-    }
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
 
-    .side-nav {
-      position: fixed;
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      z-index: 9999;
-    }
+.side-nav {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 9999;
+}
 
-    .side-nav a {
-      text-decoration: none;
-      font-size: 26px;
-      color: white;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px;
-      border-radius: 50%;
-      transition: background 0.3s, transform 0.3s;
-    }
+.side-nav a {
+  text-decoration: none;
+  font-size: 26px;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.3s, transform 0.3s;
+}
 
-    .side-nav a:hover {
-      background: rgba(255, 255, 255, 0.8);
-      color: black;
-      transform: scale(1.1);
-    }
+.side-nav a:hover {
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  transform: scale(1.1);
+}
 
-    /* ---- MOBILE TUTTI I CASI ---- */
-    @media (max-width: 768px) {
-      .side-nav {
-        position: fixed;
-        top: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        transform: none;
-        flex-direction: row;
-        justify-content: space-around;
-        background: rgba(0, 0, 0, 0.8);
-        padding: 10px 0;
-        gap: 0;
-      }
+/* ---- MOBILE TUTTI I CASI ---- */
+@media (max-width: 768px) {
+  .side-nav {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    flex-direction: row;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    gap: 0;
+  }
 
-      .side-nav a {
-        font-size: 22px;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  .side-nav a {
+    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-      #home h1 {
-        font-size: 2.5rem;
-      }
+  #home h1 {
+    font-size: 2.5rem;
+  }
 
-      .typing-container, .typing-text {
-        font-size: 1.6rem;
-      }
+  .typing-container, .typing-text {
+    font-size: 1.6rem;
+  }
 
-      .section {
-        padding: 30px;
-      }
+  .section {
+    padding: 30px;
+  }
 
-      .home {
-        min-height: 100vh;
-        height: auto;
-        padding: 50px 20px 80px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <section id="home" class="home section">
-    <h1><strong>Stefania Bologna</strong></h1>
-    <div class="typing-container">
-      <span class="typing-text">P</span>
-    </div>
-  </section>
-
-</body>
-</html>
+  .home {
+    min-height: 100vh;
+    height: auto;
+    padding: 50px 20px 80px;
+  }
+}
