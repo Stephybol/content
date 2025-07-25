@@ -24,7 +24,6 @@ body {
   text-align: center;
 }
 
-/* Forza il bianco su tutto l'h1 dentro #home */
 #home h1, 
 #home h1 * {
   color: white !important;
@@ -36,7 +35,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* ANIMAZIONE */
 .typing-container {
   font-size: 2.4rem;
   font-weight: bold;
@@ -88,10 +86,42 @@ body {
   transform: scale(1.1);
 }
 
-/* ---- MOBILE TUTTI I CASI ---- */
+/* Projects Section Styling */
+#projects h3 {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  color: #1e90ff;
+  border-left: 5px solid #1e90ff;
+  padding-left: 10px;
+}
+
+#projects p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#projects ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#projects ul li {
+  margin-bottom: 6px;
+  font-size: 1rem;
+  color: #444;
+  list-style-type: disc;
+}
+
+#projects p strong {
+  color: #000;
+}
+
+/* Responsive Mobile */
 @media (max-width: 768px) {
   .side-nav {
-    position: fixed;
     top: auto;
     bottom: 0;
     left: 0;
@@ -129,5 +159,15 @@ body {
     min-height: 100vh;
     height: auto;
     padding: 50px 20px 80px;
+  }
+
+  #projects h3 {
+    font-size: 1.3rem;
+    margin-top: 30px;
+  }
+
+  #projects p,
+  #projects ul li {
+    font-size: 1rem;
   }
 }
