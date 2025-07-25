@@ -19,7 +19,7 @@
   <!-- Home -->
   <section id="home" class="home">
     <h1>Stefania Bologna</h1>
-    <p class="typing-container"><span class="typing-text">Project & Service Manager</span></p>
+    <p class="typing-container"><span class="typing-text" id="typing"></span></p>
   </section>
 
   <!-- About -->
@@ -36,19 +36,75 @@
   <!-- Projects -->
   <section id="projects" class="section">
     <h2>My Projects</h2>
-    <p>Some selected work from the last <strong>5 years</strong>.</p>
-    <!-- Puoi incollare qui i progetti come già scritti -->
+
+    <h3>Functional Analyst – UX/UI Design & System Integration</h3>
+    <p><strong>Client:</strong> Major Italian postal services provider</p>
+    <p><strong>Duration:</strong> 1 year | <strong>Role:</strong> Functional Analyst & UX/UI Designer</p>
+    <ul>
+      <li>Collected and analyzed business requirements</li>
+      <li>Designed user flows and interface wireframes</li>
+      <li>Produced UX and technical documentation</li>
+      <li>Coordinated API integration and test planning</li>
+    </ul>
+
+    <h3>Power BI Specialist – Reporting & Service Management</h3>
+    <p><strong>Client:</strong> International energy provider</p>
+    <p><strong>Duration:</strong> 2 years | <strong>Role:</strong> Power BI Developer & Service Lead</p>
+    <ul>
+      <li>Developed multilingual Power BI reports for accounting/finance</li>
+      <li>Optimized KPIs, layouts and data models</li>
+      <li>Managed AM service: SLA, tickets, escalation, client contact</li>
+    </ul>
+
+    <h3>Power BI Analyst – Billing Lifecycle Reporting</h3>
+    <p><strong>Client:</strong> Major Italian postal services provider</p>
+    <p><strong>Duration:</strong> 2 years | <strong>Role:</strong> Power BI Analyst</p>
+    <ul>
+      <li>Designed and enhanced billing lifecycle reports</li>
+      <li>Improved DAX performance and accuracy</li>
+      <li>Coordinated with finance and IT for data consistency</li>
+    </ul>
+
+    <h3>Project Manager / Data Analyst – Credit Recovery & ML</h3>
+    <p><strong>Company:</strong> Atos Italia SpA – Milan</p>
+    <p><strong>Duration:</strong> 1 year | <strong>Role:</strong> Project Manager / Data Analyst</p>
+    <ul>
+      <li>Led Agile project using ML for credit recovery</li>
+      <li>Coordinated team, backlog, sprint progress</li>
+      <li>Managed critical issues and technical alignment</li>
+    </ul>
+
+    <h3>Service Manager – DWH Application Management</h3>
+    <p><strong>Company:</strong> Atos Italia SpA – Milan</p>
+    <p><strong>Duration:</strong> 3 years | <strong>Role:</strong> Service Manager</p>
+    <ul>
+      <li>Led AM for Cloudera DWH for international bank</li>
+      <li>Handled SLA, incident/change, ITIL KPIs</li>
+      <li>Supported ETL, SQL, and Linux scripting</li>
+    </ul>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="section">
     <h2>Contact Me</h2>
-    <ul>
-      <li><strong>Email:</strong> <a href="mailto:stefania@example.com">stefania@example.com</a></li>
-      <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/stefaniabologna/" target="_blank">linkedin.com/in/stefaniabologna</a></li>
-      <li><strong>GitHub:</strong> <a href="https://github.com/stefaniabologna" target="_blank">github.com/stefaniabologna</a></li>
-    </ul>
+    <p>
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/stefaniabologna/" target="_blank">linkedin.com/in/stefaniabologna</a>
+    </p>
   </section>
 
+  <!-- Typing script -->
+  <script>
+    const text = "Project & Service Manager";
+    let i = 0;
+    const speed = 100;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
 </body>
 </html>
