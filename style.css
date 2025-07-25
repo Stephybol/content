@@ -1,20 +1,23 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
   scroll-behavior: smooth;
 }
 
 .section {
-  min-height: 100vh;
-  padding: 50px;
+  padding: 50px 20px 50px 80px;
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  background-color: #f0f2f5;
 }
 
 .home {
-  background: url('background.jpg') no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(to bottom, #1e90ff 0%, #f0f2f5 100%);
   color: white;
   text-shadow: 1px 1px 2px black;
   display: flex;
@@ -22,11 +25,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-#home h1, 
-#home h1 * {
-  color: white !important;
+  height: 100vh;
 }
 
 #home h1 {
@@ -36,15 +35,14 @@ body {
 }
 
 .typing-container {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: bold;
   color: white;
-  text-shadow: 1px 1px 2px black;
 }
 
 .typing-text {
-  color: #1e90ff;
-  font-size: 2.4rem;
+  color: #ffffff;
+  font-size: 2rem;
   border-right: 2px solid white;
   padding-right: 6px;
   white-space: nowrap;
@@ -86,7 +84,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Projects Section Styling */
 #projects h3 {
   margin-top: 40px;
   font-size: 1.5rem;
@@ -119,7 +116,20 @@ body {
   color: #000;
 }
 
-/* Responsive Mobile */
+#contact ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+#contact ul li a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+#contact ul li a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .side-nav {
     top: auto;
@@ -143,22 +153,16 @@ body {
     justify-content: center;
   }
 
+  .section {
+    padding: 30px 20px;
+  }
+
   #home h1 {
     font-size: 2.5rem;
   }
 
   .typing-container, .typing-text {
     font-size: 1.6rem;
-  }
-
-  .section {
-    padding: 30px;
-  }
-
-  .home {
-    min-height: 100vh;
-    height: auto;
-    padding: 50px 20px 80px;
   }
 
   #projects h3 {
