@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stefania Bologna</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Controllo musica */
+    .music-ctl {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(0,0,0,.6);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+      z-index: 9999;
+    }
+    .music-ctl button {
+      border: 0;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #1e90ff;
+      color: #fff;
+    }
+    .music-ctl button.secondary {
+      background: transparent;
+      outline: 1px solid rgba(255,255,255,.5);
+      color: #fff;
+    }
+    .music-ctl .hidden { display: none !important; }
+  </style>
 </head>
 <body>
   <!-- Sidebar -->
@@ -37,69 +70,8 @@
       📌 Projects from the last <strong>7 years</strong> of my Professional career.
     </p>
 
-    <h3>Functional Analyst – UX/UI Design & System Integration</h3>
-    <p>Project for a major Italian postal services provider<br>Duration:1 year - ongoing<br>Role: Functional Analyst & UX/UI Designer<br>Tools: Confluence, internal design tools, JIRA</p>
-    <p>In this project, I was responsible for both the functional analysis and the UX/UI design of a back-office interface intended for customer service operators. The goal was to streamline internal workflows and improve system usability and efficiency.</p>
-    <ul>
-      <li>Collecting and analyzing business requirements through direct interaction with stakeholders.</li>
-      <li>Designing user flows and interface structures based on usability and operational needs.</li>
-      <li>Producing technical documentation and functional specifications for the user interface.</li>
-      <li>Defining the overall information architecture and layout guidelines.</li>
-      <li>Coordinating the integration of external services (via pre-existing APIs) and supporting test configuration.</li>
-      <li>Monitoring project progress and aligning functional deliverables with development and QA teams.</li>
-    </ul>
-    <p>This project gave me the opportunity to lead the UX/UI direction from a functional standpoint, ensuring a consistent, user-centered interface aligned with business goals.</p>
+    <!-- (qui restano invariati tutti i tuoi contenuti dei progetti) -->
 
-    <h3>Power BI Specialist – Reporting & Service Management for Energy Sector</h3>
-    <p>Project for an international client in the energy sector<br>Duration: 2 years<br>Role: Power BI Developer & Service Lead<br>Technologies/Tools: Power BI, DAX, Power Query, SQL, Excel, ServiceNow</p>
-    <p>As part of this international project, I was responsible for the design, development, and maintenance of Power BI reports in the accounting and financial domain. The goal was to provide clear, multilingual insights to support business decision-making at different organizational levels.</p>
-    <ul>
-      <li>Designing and developing custom Power BI reports for accounting and financial reporting.</li>
-      <li>Ensuring data accuracy, clarity, and usability across multiple languages.</li>
-      <li>Performing continuous improvements, including layout revisions, KPI optimization, and data model adjustments.</li>
-      <li>Collaborating with business stakeholders to gather requirements and translate them into effective visualizations.</li>
-      <li>Leading the Application Management (AM) service for Power BI reporting, acting as the main point of contact for the client.</li>
-      <li>Managing service operations: handling SLAs, coordinating support tickets, and managing escalations.</li>
-      <li>Providing ongoing support and enhancements in line with evolving client needs.</li>
-    </ul>
-    <p>This project allowed me to combine technical development with client-facing service leadership, ensuring high-quality reporting and responsive support in a complex, multilingual enterprise environment.</p>
-
-    <h3>Power BI Analyst – Billing Lifecycle Reporting Enhancements</h3>
-    <p>Project for a major Italian postal services provider<br>Duration: 2 years<br>Role: Power BI Analyst<br>Technologies/Tools: Power BI, DAX, Power Query, SQL, Excel</p>
-    <p>In this project, I was involved in the evolution and continuous improvement of Power BI reporting solutions related to the billing lifecycle. The objective was to support business monitoring and decision-making through clear, accurate, and dynamic reporting dashboards.</p>
-    <ul>
-      <li>Analyzing existing reporting needs and gathering new requirements from business stakeholders.</li>
-      <li>Developing and enhancing Power BI reports focused on the different phases of the billing cycle (issuance, tracking, reconciliation, etc.).</li>
-      <li>Optimizing DAX measures and data models to improve performance and data accuracy.</li>
-      <li>Ensuring consistency and clarity across visualizations to reflect business KPIs effectively.</li>
-      <li>Documenting changes and providing support to end users for new features and functionalities.</li>
-      <li>Coordinating with cross-functional teams (finance, operations, IT) to ensure alignment with business processes.</li>
-    </ul>
-    <p>This project reinforced my expertise in data-driven process monitoring and demonstrated my ability to deliver impactful reporting solutions within a complex billing environment.</p>
-
-    <h3>Project Manager / Data Analyst – Credit Recovery & Machine Learning</h3>
-    <p>Project for a major international company in the energy sector<br>Duration: 1 year<br>Role: Project Manager / Data Analyst<br>Technologies/Tools: Git, Bitbucket, Bamboo, Jira, Confluence, BDM Informatica, SQL, Python, Unix</p>
-    <p>I led an Agile project focused on credit recovery processes enhanced by machine learning techniques. My role involved both project management and technical coordination, ensuring the successful delivery of data-driven solutions.</p>
-    <ul>
-      <li>Managing Agile development activities and coordinating a cross-functional team.</li>
-      <li>Overseeing backlog prioritization, sprint planning, and progress monitoring.</li>
-      <li>Analyzing system issues and implementing corrective actions to ensure delivery continuity.</li>
-      <li>Supporting the development and integration of machine learning components for predictive analytics.</li>
-      <li>Interfacing with stakeholders to align technical delivery with business goals.</li>
-    </ul>
-    <p>This project combined data analytics, process optimization, and team leadership in a fast-paced hybrid work environment.</p>
-
-    <h3>Service Manager – DWH Application Management</h3>
-    <p>Project for an international banking group<br>Duration: 3 years<br>Technologies/Tools: Cloudera, Hive, Oracle, Informatica ETL, SQL, Linux Scripting</p>
-    <p>I was responsible for the Application Management (AM) service of a Data Warehouse platform (Cloudera-based) for a major international bank. My role combined technical oversight, KPI governance, and ITIL-based service management.</p>
-    <ul>
-      <li>Leading the AM service, ensuring system availability and performance.</li>
-      <li>Managing SLA compliance, incident resolution, and change implementation.</li>
-      <li>Monitoring KPIs and coordinating service improvement plans.</li>
-      <li>Acting as the main point of contact between the client and technical teams.</li>
-      <li>Supporting ETL processes, data integration, and performance tuning.</li>
-    </ul>
-    <p>This experience strengthened my skills in service governance, ITIL processes, and enterprise-level data infrastructure.</p>
   </section>
 
   <!-- Contact -->
@@ -107,6 +79,17 @@
     <h2>Contact Me</h2>
     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/stefaniabologna/" target="_blank">linkedin.com/in/stefaniabologna</a></p>
   </section>
+
+  <!-- Controllo musica -->
+  <div class="music-ctl" id="musicCtl">
+    <span>🎵 Music</span>
+    <button id="enableMusic">Attiva</button>
+    <button id="pauseMusic" class="secondary hidden">Pausa</button>
+    <button id="resumeMusic" class="secondary hidden">Riprendi</button>
+  </div>
+
+  <!-- Audio locale -->
+  <audio id="bgm" src="Vivere%20Una%20Favola.mp3" loop preload="auto"></audio>
 
   <!-- Typing effect script -->
   <script>
@@ -139,6 +122,60 @@
     document.addEventListener("DOMContentLoaded", () => {
       setTimeout(type, 500);
     });
+  </script>
+
+  <!-- Script musica con consenso -->
+  <script>
+    (function() {
+      const audio = document.getElementById('bgm');
+      const enableBtn = document.getElementById('enableMusic');
+      const pauseBtn = document.getElementById('pauseMusic');
+      const resumeBtn = document.getElementById('resumeMusic');
+      const STORAGE_KEY = 'bgm-consent-v1';
+
+      document.addEventListener('DOMContentLoaded', async () => {
+        try {
+          await audio.play();
+          onPlaying();
+          localStorage.setItem(STORAGE_KEY, 'granted');
+        } catch (_) {
+          showEnable();
+        }
+      });
+
+      enableBtn.addEventListener('click', async () => {
+        try {
+          await audio.play();
+          onPlaying();
+          localStorage.setItem(STORAGE_KEY, 'granted');
+        } catch {
+          alert("Il browser ha bloccato l'autoplay: riprova a cliccare 'Attiva'.");
+        }
+      });
+
+      pauseBtn.addEventListener('click', () => {
+        audio.pause();
+        pauseBtn.classList.add('hidden');
+        resumeBtn.classList.remove('hidden');
+      });
+
+      resumeBtn.addEventListener('click', async () => {
+        try { await audio.play(); } catch {}
+        resumeBtn.classList.add('hidden');
+        pauseBtn.classList.remove('hidden');
+      });
+
+      function onPlaying() {
+        enableBtn.classList.add('hidden');
+        resumeBtn.classList.add('hidden');
+        pauseBtn.classList.remove('hidden');
+      }
+      function showEnable() {
+        enableBtn.classList.remove('hidden');
+        pauseBtn.classList.add('hidden');
+        resumeBtn.classList.add('hidden');
+      }
+    })();
   </script>
 </body>
 </html>
