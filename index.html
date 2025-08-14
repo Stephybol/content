@@ -150,7 +150,7 @@
     <button id="resumeMusic" class="secondary hidden">Riprendi</button>
   </div>
 
-   <!-- Audio locale: stesso folder dell'HTML -->
+  <!-- Audio locale: stesso folder dell'HTML -->
   <audio id="bgm"
          src="01%20-%20Vivere%20Una%20Favola.mp3"
          autoplay
@@ -200,14 +200,15 @@
       const pauseBtn = document.getElementById('pauseMusic');
       const resumeBtn = document.getElementById('resumeMusic');
 
-      // All'avvio l'audio è in play ma MUTED (consentito dai browser)
+      // Prova ad avviare in muto (se il browser lo consente)
       document.addEventListener('DOMContentLoaded', async () => {
         try { await audio.play(); } catch(_) {}
       });
 
-      // Click su "Attiva audio": togliamo il muto
-      enableBtn.addEventListener('click', () => {
+      // Sblocco al click: togli muto e chiama play() nel gesto utente
+      enableBtn.addEventListener('click', async () => {
         audio.muted = false;
+        try { await audio.play(); } catch (err) { console.warn('Impossibile avviare audio:', err); }
         enableBtn.classList.add('hidden');
         pauseBtn.classList.remove('hidden');
       });
@@ -220,10 +221,16 @@
       });
 
       resumeBtn.addEventListener('click', async () => {
-        try { await audio.play(); } catch {}
+        try { await audio.play(); } catch (_) {}
         resumeBtn.classList.add('hidden');
         pauseBtn.classList.remove('hidden');
       });
+
+      // iOS/Safari: ulteriore “nudge” al primo tocco
+      window.addEventListener('touchstart', async function onFirstTouch() {
+        try { await audio.play(); } catch (_) {}
+        window.removeEventListener('touchstart', onFirstTouch);
+      }, { once: true });
     })();
   </script>
 </body>
