@@ -101,6 +101,42 @@ body {
   text-decoration: underline;
 }
 
+/* Controllo musica desktop */
+.music-ctl {
+  position: fixed;
+  right: 16px;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: rgba(0,0,0,.6);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+  z-index: 9999;
+  font: 600 14px/1.2 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.music-ctl button {
+  border: 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #1e90ff;
+  color: #fff;
+}
+
+.music-ctl button.secondary {
+  background: transparent;
+  outline: 1px solid rgba(255,255,255,.5);
+  color: #fff;
+}
+
+.music-ctl .hidden { display: none !important; }
+
 /* Responsive */
 @media (max-width: 768px) {
   .side-nav {
@@ -133,5 +169,35 @@ body {
 
   .section {
     padding: 40px 20px;
+  }
+
+  /* Versione compatta tasto musica su mobile */
+  .music-ctl {
+    top: max(12px, env(safe-area-inset-top));
+    bottom: auto;
+    padding: 10px;
+    border-radius: 50%;
+    gap: 0;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+  }
+
+  .music-ctl span {
+    display: none; /* Nasconde la scritta "Music" */
+  }
+
+  .music-ctl button {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: transparent;
+    outline: none;
+  }
+
+  .music-ctl button.secondary {
+    outline: none;
   }
 }
